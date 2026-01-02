@@ -1,0 +1,287 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Equinox Portal - نظام البلاغات الرسمي</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+        
+        body {
+            background: linear-gradient(135deg, #0c2461, #1e3799);
+            color: white;
+            min-height: 100vh;
+            padding: 20px;
+        }
+        
+        .language-switcher {
+            text-align: left;
+            margin-bottom: 20px;
+        }
+        
+        .lang-btn {
+            background: rgba(255, 255, 255, 0.1);
+            color: white;
+            border: 1px solid rgba(255, 255, 255, 0.3);
+            padding: 8px 15px;
+            border-radius: 5px;
+            cursor: pointer;
+            margin: 0 5px;
+            transition: all 0.3s;
+        }
+        
+        .lang-btn.active {
+            background: rgba(255, 255, 255, 0.2);
+            border-color: white;
+        }
+        
+        .container {
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 30px;
+            background: rgba(255, 255, 255, 0.05);
+            border-radius: 15px;
+            backdrop-filter: blur(10px);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+        }
+        
+        .header {
+            text-align: center;
+            margin-bottom: 40px;
+        }
+        
+        .logo {
+            font-size: 2.5em;
+            font-weight: bold;
+            margin-bottom: 10px;
+            background: linear-gradient(45deg, #4a69bd, #6a89cc);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+        
+        .subtitle {
+            font-size: 1.2em;
+            opacity: 0.9;
+            margin-bottom: 5px;
+        }
+        
+        .url {
+            color: #82ccdd;
+            font-size: 0.9em;
+            margin-bottom: 30px;
+        }
+        
+        .portal-title {
+            font-size: 2em;
+            text-align: center;
+            margin: 30px 0;
+            color: #dff9fb;
+        }
+        
+        .description {
+            text-align: center;
+            font-size: 1.1em;
+            line-height: 1.6;
+            margin-bottom: 40px;
+            opacity: 0.9;
+        }
+        
+        .form-container {
+            background: rgba(255, 255, 255, 0.08);
+            padding: 30px;
+            border-radius: 10px;
+            border: 1px solid rgba(255, 255, 255, 0.1);
+        }
+        
+        .form-group {
+            margin-bottom: 25px;
+        }
+        
+        label {
+            display: block;
+            margin-bottom: 8px;
+            font-weight: 500;
+            color: #dff9fb;
+        }
+        
+        input, textarea {
+            width: 100%;
+            padding: 12px 15px;
+            background: rgba(255, 255, 255, 0.1);
+            border: 1px solid rgba(255, 255, 255, 0.2);
+            border-radius: 5px;
+            color: white;
+            font-size: 1em;
+        }
+        
+        input:focus, textarea:focus {
+            outline: none;
+            border-color: #4a69bd;
+            background: rgba(255, 255, 255, 0.15);
+        }
+        
+        textarea {
+            min-height: 150px;
+            resize: vertical;
+        }
+        
+        .submit-btn {
+            background: linear-gradient(45deg, #4a69bd, #6a89cc);
+            color: white;
+            border: none;
+            padding: 15px 30px;
+            font-size: 1.1em;
+            border-radius: 5px;
+            cursor: pointer;
+            width: 100%;
+            transition: all 0.3s;
+            font-weight: bold;
+        }
+        
+        .submit-btn:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 5px 15px rgba(74, 105, 189, 0.4);
+        }
+        
+        .footer {
+            text-align: center;
+            margin-top: 40px;
+            padding-top: 20px;
+            border-top: 1px solid rgba(255, 255, 255, 0.1);
+            font-size: 0.9em;
+            opacity: 0.7;
+        }
+        
+        /* اللغة الإنجليزية */
+        [lang="en"] {
+            direction: ltr;
+            text-align: left;
+        }
+        
+        .hidden {
+            display: none;
+        }
+        
+        @media (max-width: 768px) {
+            .container {
+                padding: 20px;
+            }
+            
+            .form-container {
+                padding: 20px;
+            }
+            
+            .logo {
+                font-size: 2em;
+            }
+            
+            .portal-title {
+                font-size: 1.5em;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="language-switcher">
+        <button class="lang-btn active" onclick="switchLanguage('ar')">العربية</button>
+        <button class="lang-btn" onclick="switchLanguage('en')">English</button>
+    </div>
+    
+    <div class="container">
+        <div class="header">
+            <div class="logo">Equinox Portal</div>
+            <div class="subtitle" id="subtitle-ar">البلاغات بوابة</div>
+            <div class="subtitle hidden" id="subtitle-en">Reports Portal</div>
+            <div class="url">luizasanbin-wq.github.io/oojwb9</div>
+        </div>
+        
+        <div class="portal-title" id="portal-title-ar">نظام البلاغات الرسمي</div>
+        <div class="portal-title hidden" id="portal-title-en">OFFICIAL REPORTING SYSTEM</div>
+        
+        <div class="description" id="desc-ar">منصة آمنة وسريعة للمراسلات القانونية</div>
+        <div class="description hidden" id="desc-en">Secure and fast platform for legal correspondence</div>
+        
+        <div class="form-container">
+            <form id="reportForm">
+                <div class="form-group">
+                    <label for="email" id="email-label-ar">بريد الجهة</label>
+                    <label for="email" class="hidden" id="email-label-en">Entity Email</label>
+                    <input type="email" id="email" placeholder="example@company.com" required>
+                </div>
+                
+                <div class="form-group">
+                    <label for="subject" id="subject-label-ar">الموضوع</label>
+                    <label for="subject" class="hidden" id="subject-label-en">Subject</label>
+                    <input type="text" id="subject" placeholder="" required>
+                </div>
+                
+                <div class="form-group">
+                    <label for="message" id="message-label-ar">نص الرسالة</label>
+                    <label for="message" class="hidden" id="message-label-en">Message Text</label>
+                    <textarea id="message" placeholder="" required></textarea>
+                </div>
+                
+                <button type="submit" class="submit-btn" id="submit-btn-ar">إرسال البلاغ</button>
+                <button type="submit" class="submit-btn hidden" id="submit-btn-en">Submit Report</button>
+            </form>
+        </div>
+        
+        <div class="footer">
+            <div id="footer-ar">© 2024 نظام Equinox Portal. جميع الحقوق محفوظة.</div>
+            <div class="hidden" id="footer-en">© 2024 Equinox Portal System. All rights reserved.</div>
+        </div>
+    </div>
+
+    <script>
+        function switchLanguage(lang) {
+            // تحديث أزرار اللغة
+            document.querySelectorAll('.lang-btn').forEach(btn => {
+                btn.classList.remove('active');
+                if (btn.textContent.includes(lang === 'ar' ? 'العربية' : 'English')) {
+                    btn.classList.add('active');
+                }
+            });
+            
+            // تبديل اتجاه الصفحة
+            document.documentElement.lang = lang;
+            document.documentElement.dir = lang === 'ar' ? 'rtl' : 'ltr';
+            
+            // إظهار/إخفاء العناصر حسب اللغة
+            document.querySelectorAll('[id$="-ar"]').forEach(el => {
+                el.classList.toggle('hidden', lang !== 'ar');
+            });
+            
+            document.querySelectorAll('[id$="-en"]').forEach(el => {
+                el.classList.toggle('hidden', lang !== 'en');
+            });
+        }
+        
+        // معالجة إرسال النموذج
+        document.getElementById('reportForm').addEventListener('submit', function(e) {
+            e.preventDefault();
+            
+            const email = document.getElementById('email').value;
+            const subject = document.getElementById('subject').value;
+            const message = document.getElementById('message').value;
+            
+            // هنا يمكنك إضافة كود الإرسال إلى الخادم
+            // مثال باستخدام Formspree أو إرسال إلى بريدك
+            
+            alert(document.documentElement.lang === 'ar' 
+                ? 'تم استلام بلاغك بنجاح! سيتم الرد خلال 24 ساعة.' 
+                : 'Your report has been received successfully! A response will be provided within 24 hours.');
+            
+            // مسح الحقول
+            this.reset();
+        });
+        
+        // تعيين اللغة الافتراضية
+        switchLanguage('ar');
+    </script>
+</body>
+</html>

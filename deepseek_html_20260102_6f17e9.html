@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>موسى الغولي | مصمم جرافيك</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+</head>
+<body>
+    <div class="container">
+        <!-- الصورة الشخصية -->
+        <div class="profile-header">
+            <img src="profile.jpg" alt="صورة موسى الغولي" class="profile-pic">
+            <div class="profile-overlay">
+                <i class="fas fa-palette"></i>
+            </div>
+        </div>
+        
+        <!-- الاسم والمهنة -->
+        <h1>موسى الغولي</h1>
+        <div class="title">مصمم جرافيك ومحتوى رقمي</div>
+        
+        <!-- الوصف -->
+        <div class="bio">
+            <p><i class="fas fa-quote-right"></i> مصمم جرافيك متخصص في تصميم الهويات البصرية، الشعارات، والمحتوى الرقمي. أحول الأفكار إلى تصاميم إبداعية تلهم الجمهور وتحقق الأهداف.</p>
+        </div>
+        
+        <!-- المهارات -->
+        <div class="skills">
+            <h2><i class="fas fa-star"></i> تخصصاتي</h2>
+            <div class="skills-list">
+                <span>تصميم الشعارات</span>
+                <span>الهوية البصرية</span>
+                <span>تصميم وسائل التواصل</span>
+                <span>تصميم UI/UX</span>
+                <span>تحرير الفيديو</span>
+                <span>الرسوم المتحركة</span>
+            </div>
+        </div>
+        
+        <!-- روابط التواصل -->
+        <div class="contact">
+            <h2><i class="fas fa-link"></i> تواصل معي</h2>
+            <div class="links">
+                <a href="https://t.me/IM_6_C" class="btn telegram" target="_blank">
+                    <i class="fab fa-telegram"></i> Telegram @IM_6_C
+                </a>
+                <a href="https://wa.me/967716865806" class="btn whatsapp" target="_blank">
+                    <i class="fab fa-whatsapp"></i> WhatsApp +967716865806
+                </a>
+                <a href="mailto:mousa@example.com" class="btn email">
+                    <i class="fas fa-envelope"></i> mousa@example.com
+                </a>
+            </div>
+        </div>
+        
+        <!-- ملاحظة للتواصل -->
+        <div class="contact-note">
+            <p><i class="fas fa-comment-dots"></i> متاح للعمل الحر والمشاريع الإبداعية</p>
+        </div>
+        
+        <!-- حقوق النشر -->
+        <footer>
+            <p>© 2024 موسى الغولي. جميع الحقوق محفوظة</p>
+            <p class="made-with">تم التصميم بـ <i class="fas fa-heart"></i> و <i class="fas fa-code"></i></p>
+        </footer>
+    </div>
+    
+    <!-- تأثيرات الجافاسكريبت -->
+    <script>
+        // تأثير عند تحميل الصفحة
+        document.addEventListener('DOMContentLoaded', function() {
+            document.querySelector('.container').style.opacity = '0';
+            document.querySelector('.container').style.transform = 'translateY(20px)';
+            
+            setTimeout(function() {
+                document.querySelector('.container').style.transition = 'opacity 0.8s, transform 0.8s';
+                document.querySelector('.container').style.opacity = '1';
+                document.querySelector('.container').style.transform = 'translateY(0)';
+            }, 100);
+            
+            // تأثير على المهارات
+            const skills = document.querySelectorAll('.skills-list span');
+            skills.forEach((skill, index) => {
+                skill.style.opacity = '0';
+                skill.style.transform = 'translateY(20px)';
+                
+                setTimeout(() => {
+                    skill.style.transition = `opacity 0.5s ${index * 0.1}s, transform 0.5s ${index * 0.1}s`;
+                    skill.style.opacity = '1';
+                    skill.style.transform = 'translateY(0)';
+                }, 300);
+            });
+        });
+        
+        // تأثير عند المرور على الأزرار
+        document.querySelectorAll('.btn').forEach(button => {
+            button.addEventListener('mouseenter', function() {
+                this.style.transform = 'translateY(-5px) scale(1.02)';
+            });
+            
+            button.addEventListener('mouseleave', function() {
+                this.style.transform = 'translateY(0) scale(1)';
+            });
+        });
+        
+        // نقر على روابط التواصل
+        document.querySelectorAll('.btn').forEach(button => {
+            button.addEventListener('click', function(e) {
+                // تأثير النقر
+                this.style.transform = 'scale(0.95)';
+                setTimeout(() => {
+                    this.style.transform = '';
+                }, 150);
+            });
+        });
+    </script>
+</body>
+</html>
